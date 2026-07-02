@@ -5,7 +5,7 @@ import certifi
 import datetime
 import random
 import hashlib
-
+import os
 
 # ----------------------------------------------------------------------
 # CONNECTION
@@ -13,7 +13,7 @@ import hashlib
 @st.cache_resource(show_spinner=False)
 def get_client():
     try:
-        uri = st.secrets["uri"]
+        uri = os.getenv("uri")
     except Exception:
         st.error(
             "MongoDB URI not found. Add it to `.streamlit/secrets.toml` under "
