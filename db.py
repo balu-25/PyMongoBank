@@ -13,7 +13,7 @@ import hashlib
 @st.cache_resource(show_spinner=False)
 def get_client():
     try:
-        uri = st.secrets["mongo"]["uri"]
+        uri = st.secrets["uri"]
     except Exception:
         st.error(
             "MongoDB URI not found. Add it to `.streamlit/secrets.toml` under "
