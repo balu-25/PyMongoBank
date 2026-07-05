@@ -189,7 +189,6 @@ with tab2:
                                     fresh_user = get_user(selected_user_id)
                                     new_balance = (
                                         fresh_user["balance"] + loan["amount"]
-                                        + (loan["total_payable"] - loan["amount"])
                                     )
                                     # amount + interest credited to balance
                                     update_balance(selected_user_id, new_balance)
